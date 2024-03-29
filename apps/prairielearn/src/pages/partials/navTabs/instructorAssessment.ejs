@@ -71,4 +71,11 @@
     urlSuffix:      '/assessment/'+assessment.id+'/uploads',
     iconClasses:    'fas fa-upload',
     tabLabel:       'Uploads'}) %>
+<% } %> 
+<% if (authz_data.has_course_instance_permission_view) { %>
+<%- include('navTab', {
+    activeSubPage:  'cheat_detection',
+    urlSuffix:      '/assessment/'+assessment.id+'/cheat_detection',
+    iconClasses:    'fas fa-chart-bar',
+    tabLabel:       'Cheat Detection'}) %>
 <% } %>
