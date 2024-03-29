@@ -1,0 +1,30 @@
+# denylist all
+*
+
+# allowlist things to copy
+!.editorconfig
+!.eslintignore
+!.eslintrc.js
+!.htmlhintrc
+!.mocharc.js
+!.prettierignore
+!.prettierrc.json
+!.yarnrc.yml
+!tsconfig.json
+!turbo.json
+!.yarn/
+.yarn/cache
+.yarn/install-state.gz
+!pyproject.toml
+!apps/
+apps/prairielearn/server.log
+!database/
+!docs/
+!docker/
+!exampleCourse/
+!Makefile
+!package.json
+!yarn.lock
+!packages/
+!testCourse/
+!tools/
