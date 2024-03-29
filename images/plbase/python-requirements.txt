@@ -25,7 +25,7 @@ pyarrow==15.0.0
 pygments-ansi-color==0.3.0
 pygraphviz==1.12
 pyquaternion==0.9.9
-pytest-cov==4.1.0
+pytest-cov==5.0.0
 pytest-repeat==0.9.3
 pytest==8.0.2
 recommonmark==0.7.1
