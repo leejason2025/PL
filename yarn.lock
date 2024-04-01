@@ -3372,7 +3372,7 @@ __metadata:
     "@sa11y/format": ^6.3.2
     "@sentry/profiling-node": ^7.104.0
     "@sentry/tracing": ^7.104.0
-    "@socket.io/redis-adapter": ^8.2.1
+    "@socket.io/redis-adapter": ^8.3.0
     "@types/archiver": ^6.0.2
     "@types/async": ^3.2.24
     "@types/body-parser": ^1.19.5
@@ -3670,7 +3670,7 @@ __metadata:
     "@prairielearn/postgres": "workspace:^"
     "@prairielearn/sentry": "workspace:^"
     "@prairielearn/workspace-utils": "workspace:^"
-    "@socket.io/redis-adapter": ^8.2.1
+    "@socket.io/redis-adapter": ^8.3.0
     "@socket.io/redis-emitter": ^5.1.0
     "@types/node": ^20.11.24
     archiver: ^6.0.2
@@ -4613,16 +4613,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@socket.io/redis-adapter@npm:^8.2.1":
-  version: 8.2.1
-  resolution: "@socket.io/redis-adapter@npm:8.2.1"
+"@socket.io/redis-adapter@npm:^8.3.0":
+  version: 8.3.0
+  resolution: "@socket.io/redis-adapter@npm:8.3.0"
   dependencies:
     debug: ~4.3.1
     notepack.io: ~3.0.1
     uid2: 1.0.0
   peerDependencies:
-    socket.io-adapter: ^2.4.0
-  checksum: f0fc24a537b075ed6340a4adbd12631e3b55e867b8aa9203ed1cd5a28a4c97dc0dc3e65c00bbbe13ee6dc3bae382b6d9ed9ac44d4eb156f23965ee0e0ac9e6fd
+    socket.io-adapter: ^2.5.4
+  checksum: f93705acf88b9ed89e4cdd0dd432e121c72eedae1e2d30d6feaa1e3e4db0106eac5f01170333865bb3636cd603f87069a108cd5c2c7c342261804f15b0dc36b1
   languageName: node
   linkType: hard
 

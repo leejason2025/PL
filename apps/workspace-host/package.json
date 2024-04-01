@@ -22,7 +22,7 @@
     "@prairielearn/postgres": "workspace:^",
     "@prairielearn/sentry": "workspace:^",
     "@prairielearn/workspace-utils": "workspace:^",
-    "@socket.io/redis-adapter": "^8.2.1",
+    "@socket.io/redis-adapter": "^8.3.0",
     "@socket.io/redis-emitter": "^5.1.0",
     "archiver": "^6.0.2",
     "async": "^3.2.5",
