@@ -3510,7 +3510,7 @@ __metadata:
     object-hash: ^3.0.0
     on-finished: ^2.4.1
     openid-client: ^5.6.4
-    parse5: ^6.0.1
+    parse5: ^7.1.2
     passport: ^0.6.0
     passport-azure-ad: ^4.3.5
     passport-saml: ^3.2.4
@@ -13257,7 +13257,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"parse5@npm:^6.0.0, parse5@npm:^6.0.1":
+"parse5@npm:^6.0.0":
   version: 6.0.1
   resolution: "parse5@npm:6.0.1"
   checksum: 7d569a176c5460897f7c8f3377eff640d54132b9be51ae8a8fa4979af940830b2b0c296ce75e5bd8f4041520aadde13170dbdec44889975f906098ea0002f4bd
