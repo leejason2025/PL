@@ -3536,7 +3536,7 @@ __metadata:
     serve-favicon: ^2.5.0
     set-cookie-parser: ^2.6.0
     showdown: ^2.1.0
-    socket.io: ^4.7.4
+    socket.io: ^4.7.5
     socket.io-adapter: ^2.5.4
     socket.io-client: ^4.7.4
     streamifier: ^0.1.1
@@ -3708,7 +3708,7 @@ __metadata:
     "@types/node": ^20.11.24
     fast-glob: ^3.3.2
     filesize: ^10.1.0
-    socket.io: ^4.7.4
+    socket.io: ^4.7.5
     typescript: ^5.3.3
     typescript-cp: ^0.1.9
   languageName: unknown
@@ -15116,9 +15116,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"socket.io@npm:^4.7.4":
-  version: 4.7.4
-  resolution: "socket.io@npm:4.7.4"
+"socket.io@npm:^4.7.5":
+  version: 4.7.5
+  resolution: "socket.io@npm:4.7.5"
   dependencies:
     accepts: ~1.3.4
     base64id: ~2.0.0
@@ -15127,7 +15127,7 @@ __metadata:
     engine.io: ~6.5.2
     socket.io-adapter: ~2.5.2
     socket.io-parser: ~4.2.4
-  checksum: 63bb2b0c1168beb7a79b60541def09d4de23f10f206e2e36e7a1ec1ef3d1f2f3143264878e026ceacdd26b52a37da74606c44e95da6651b4980cad5bfcc291a9
+  checksum: b8b57216152cf230bdcb77b5450e124ebe1fee7482eeb50a6ef760b69f2f5a064e9b8640ce9c1efc5c9e081f5d797d3f6ff3f81606e19ddaf5d4114aad9ec7d3
   languageName: node
   linkType: hard
 
