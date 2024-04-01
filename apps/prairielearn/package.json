@@ -94,7 +94,7 @@
     "fabric": "^4.6.0",
     "fast-glob": "^3.3.2",
     "fetch-cookie": "^3.0.1",
-    "file-type": "^16.5.4",
+    "file-type": "^19.0.0",
     "filesize": "^10.1.0",
     "folder-hash": "^4.0.4",
     "fs-extra": "^11.2.0",
