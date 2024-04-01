@@ -160,7 +160,7 @@
     "showdown": "^2.1.0",
     "socket.io": "^4.7.4",
     "socket.io-adapter": "^2.5.4",
-    "socket.io-client": "^4.7.4",
+    "socket.io-client": "^4.7.5",
     "streamifier": "^0.1.1",
     "strip-ansi": "^6.0.1",
     "stripe": "^14.19.0",
