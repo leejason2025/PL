@@ -27,7 +27,7 @@
     "async-stacktrace": "^0.0.2",
     "byline": "^5.0.0",
     "chai": "^4.4.1",
-    "dockerode": "^3.3.5",
+    "dockerode": "^4.0.2",
     "fs-extra": "^11.2.0",
     "logform": "^2.6.0",
     "tmp": "^0.2.3",
