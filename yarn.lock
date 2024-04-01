@@ -1385,7 +1385,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/runtime@npm:^7.20.1, @babel/runtime@npm:^7.21.0, @babel/runtime@npm:^7.5.5":
+"@babel/runtime@npm:^7.20.1, @babel/runtime@npm:^7.5.5":
   version: 7.21.5
   resolution: "@babel/runtime@npm:7.21.5"
   dependencies:
@@ -3049,7 +3049,7 @@ __metadata:
     "@types/mocha": ^10.0.6
     "@types/node": ^20.11.24
     chai: ^4.4.1
-    date-fns: ^2.30.0
+    date-fns: ^3.6.0
     mocha: ^10.3.0
     tsx: ^4.7.1
     typescript: ^5.3.3
@@ -3449,7 +3449,7 @@ __metadata:
     csv-parse: ^5.5.5
     csvtojson: ^2.0.10
     d3: ^7.8.5
-    date-fns: ^2.30.0
+    date-fns: ^3.6.0
     date-fns-tz: ^2.0.0
     debug: ^4.3.4
     delegated-events: ^1.1.2
@@ -7787,12 +7787,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"date-fns@npm:^2.30.0":
-  version: 2.30.0
-  resolution: "date-fns@npm:2.30.0"
-  dependencies:
-    "@babel/runtime": ^7.21.0
-  checksum: f7be01523282e9bb06c0cd2693d34f245247a29098527d4420628966a2d9aad154bd0e90a6b1cf66d37adcb769cd108cf8a7bd49d76db0fb119af5cdd13644f4
+"date-fns@npm:^3.6.0":
+  version: 3.6.0
+  resolution: "date-fns@npm:3.6.0"
+  checksum: 0daa1e9a436cf99f9f2ae9232b55e11f3dd46132bee10987164f3eebd29f245b2e066d7d7db40782627411ecf18551d8f4c9fcdf2226e48bb66545407d448ab7
   languageName: node
   linkType: hard
 
