@@ -35,8 +35,15 @@
       <p>input form: x% </p>
       <p>threshold slidebar: loose / medium / strict</p>
 
-      <input type = "file" id = "uploadcsv">
-      <button type="button" class="btn btn-sm btn-primary" id="uploadconfirm"> Upload CSV</button>
+      <div>
+        <label for="uploadcsv1">Results</label>
+        <input type = "file" id = "uploadcsv1">
+      </div>
+      <div>
+        <label for="uploadcsv2">Rule 5 Results    </label>
+        <input type = "file" id = "uploadcsv2">
+      </div>
+      <button type="button" class="btn btn-sm btn-primary" id="uploadconfirm"> Upload CSVs</button>
       <button type="button" class="btn btn-sm btn-primary" id="reload">Reload Data</button>
       <hr>
 
@@ -62,7 +69,7 @@
         </div>
       </div>
       <script>
-        var button = document.getElementById("uploadcsv");
+        var button = document.getElementById("uploadcsv1");
         var rect = button.getBoundingClientRect();
         console.log(rect.top, rect.right, rect.bottom, rect.left);
       </script>
@@ -141,7 +148,7 @@
           const uploadcsv = document.getElementById('uploadconfirm')
             .addEventListener('click', () => {
               //Parsing
-              Papa.parse(document.getElementById('uploadcsv').files[0], {
+              Papa.parse(document.getElementById('uploadcsv1').files[0], {
                 download: true,
                 header: true,
                 skipEmptyLines: true,
@@ -155,6 +162,24 @@
                   readWriteData(results, 'rule6_prob', score_data);
                   updateTable(results.data);
                   updateDetailedReport(results.data);
+                  }
+              });
+            });
+          
+          var rule_5_data = "";
+          function assignRule5(data) {
+            rule_5_data = data
+          };
+          const uploadcsv2 = document.getElementById('uploadconfirm')
+            .addEventListener('click', () => {
+              //Parsing
+              Papa.parse(document.getElementById('uploadcsv2').files[0], {
+                download: true,
+                header: true,
+                skipEmptyLines: true,
+                
+                complete : function(results) {
+                  assignRule5(results.data)
                   }
               });
             });
@@ -244,8 +269,9 @@
               console.log("hello")
               let tr = $("<tr role=\"row\" class=\"even\" data-href=\"" +window.location.href+ "_pair?data1=" + data[i].student1 + "&data2=" + data[i].student2 + "\"></tr>");  // localhost:3000/cheat_detection_pair             localhost:3000/pl/.....
               tr.append($("<td>" + (i+1) + "</td>"));
-              tr.append($("<td>" + parseFloat(data[i].overall_prob).toFixed(2) + "</td>")); 
-              tr.append($("<td>" + data[i].student1 + "</td>"));
+              // tr.append($("<td>" + parseFloat(data[i].overall_prob).toFixed(2) + "</td>")); 
+              highlightSimilarityScore(data[i].overall_prob, tr)
+              tr.append($("<td>" + data[i].student1 + "rule5" + rule_5_data[i].student + "</td>"));
               tr.append($("<td>" + data[i].student2 + "</td>"));
               highlightSimilarityScore(data[i].rule1_prob, tr)
               highlightSimilarityScore(data[i].rule2_prob, tr)
