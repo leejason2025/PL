@@ -67,10 +67,14 @@
       <!-- pair detail on each rule -->
       <div class="card mb-4">
         <div class="card-header bg-primary text-white" id="cardHeader">
-          Detailed Report for Pair <%=(window.location.search.substr(0), window.location.search.substr(1)) %>
+          
         </div>
+        <script>
+          const div = document.getElementById('cardHeader');
+          div.textContent = "Detailed Report for Pair (" + queryParams.data1 + " , " + queryParams.data2 + ")";
+        </script>
         <p id='cardContent'style="margin:2%">
-          <%=window.location.search.substr(0), window.location.search.substr(1) %> 
+          <!-- <%=window.location.search.substr(0), window.location.search.substr(1) %>  -->
           have been detected by 6 abnormal behaviors with a confidence score of 86%: 
         </p>
         <ol>
