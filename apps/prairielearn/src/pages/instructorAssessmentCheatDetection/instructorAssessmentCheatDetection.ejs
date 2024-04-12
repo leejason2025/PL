@@ -137,12 +137,18 @@
                 dict["0.9-1"] += 1;
               
             }
-            if (ruleData === 'overall_prob') { overall_data = dict; }
-            else if (ruleData === 'rule1_prob') { time_data = dict; }
-            else if (ruleData === 'rule2_prob') { answer_data = dict; }
-            else if (ruleData === 'rule3_prob') { order_data = dict; }
-            else if (ruleData === 'rule4_prob') { wrong_answer_data = dict; }
-            else if (ruleData === 'rule6_prob') { score_data = dict; }
+            if (ruleData === 'overall_prob') { overall_data = dict;
+              localStorage.setItem('overall_data', overall_data); }
+            else if (ruleData === 'rule1_prob') { time_data = dict; 
+            localStorage.setItem('time_data', time_data);}
+            else if (ruleData === 'rule2_prob') { answer_data = dict; 
+              localStorage.setItem('answer_data', answer_data);}
+            else if (ruleData === 'rule3_prob') { order_data = dict;
+              localStorage.setItem('order_data', order_data); }
+            else if (ruleData === 'rule4_prob') { wrong_answer_data = dict; 
+              localStorage.setItem('wrong_answer_data', wrong_answer_data);}
+            else if (ruleData === 'rule6_prob') { score_data = dict; 
+              localStorage.setItem('score_data', score_data);}
             
           }
           const uploadcsv = document.getElementById('uploadconfirm')

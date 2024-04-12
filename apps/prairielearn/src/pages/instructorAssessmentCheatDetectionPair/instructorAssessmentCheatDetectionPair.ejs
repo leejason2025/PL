@@ -48,15 +48,31 @@
           $('[data-toggle="popover"]').popover({sanitize: false})
       });
     </script> 
+    <!-- Grab all of the local variables for the results csv file -->
+    <script>
+      let overall_data = localStorage.getItem('overall_data');
+      let time_data = localStorage.getItem('time_data');
+      let answer_data = localStorage.getItem('answer_data');
+      let order_data = localStorage.getItem('order_data');
+      let wrong_answer_data = localStorage.getItem('wrong_answer_data');
+      let score_data = localStorage.getItem('score_data');
+      
+      console.log("Time_data: ", time_data);
+      console.log("Overall_data: ", overall_data);
+
+    </script>
     <%- include('../partials/navbar'); %>
     <div id="content" class="container-fluid">
       <%- include('../partials/assessmentSyncErrorsAndWarnings'); %>
       <!-- pair detail on each rule -->
       <div class="card mb-4">
         <div class="card-header bg-primary text-white" id="cardHeader">
-          Detailed Report for Pair (Student1, Student2)
+          Detailed Report for Pair <%=(window.location.search.substr(0), window.location.search.substr(1)) %>
         </div>
-        <p id='cardContent'style="margin:2%">Student1, Student2 have been detected by 6 abnormal behaviors with a confidence score of 86%: </p>
+        <p id='cardContent'style="margin:2%">
+          <%=window.location.search.substr(0), window.location.search.substr(1) %> 
+          have been detected by 6 abnormal behaviors with a confidence score of 86%: 
+        </p>
         <ol>
 
         <!-- rule#0: Abnormal time-score-ration -->
@@ -131,8 +147,8 @@
                     <thread>
                       <tr>
                         <th class="text-center"></th>
-                        <th class="text-center">Student1</th>
-                        <th class="text-center">Student3</th>
+                        <th class="text-center"><%=window.location.search.substr(0)%></th>
+                        <th class="text-center"><%=window.location.search.substr(1) %></th>
                         <th class="text-center">Time Difference</th>
                       </tr>
                     </thead>
