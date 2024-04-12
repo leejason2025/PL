@@ -32,8 +32,6 @@
     <script>
       document.addEventListener('DOMContentLoaded', function() {
       const queryParamsString = window.location.search.substr(1);
-      console.log(window.location.search)
-      console.log(window.location.search.substr(1))
       const queryParams = queryParamsString
         .split('&')
         .reduce((accumulator, singleQueryParam) => {
@@ -47,6 +45,8 @@
       $(function () {
           $('[data-toggle="popover"]').popover({sanitize: false})
       });
+      console.log(window.location.search.substr(1))
+      console.log(window.location)
     </script> 
     <%- include('../partials/navbar'); %>
     <div id="content" class="container-fluid">
