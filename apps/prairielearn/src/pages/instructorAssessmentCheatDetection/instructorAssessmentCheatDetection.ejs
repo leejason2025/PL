@@ -270,36 +270,38 @@
             let table_body = $("tbody#table-body");
             // append rows
             //<a href="<%= urlPrefix %>/cheat_detection_pair/">cheat_detection_pair</a>
-            for (let i=0; i<5; i++) {
-              console.log("<%= urlPrefix %>")
-              console.log("hello")
-              let tr = $("<tr role=\"row\" class=\"even\" data-href=\"" +window.location.href+ "_pair?data1=" + data[i].student1 + "&data2=" + data[i].student2 + "\"></tr>");  // localhost:3000/cheat_detection_pair             localhost:3000/pl/.....
-              tr.append($("<td>" + (i+1) + "</td>"));
-              // tr.append($("<td>" + parseFloat(data[i].overall_prob).toFixed(2) + "</td>")); 
-              highlightSimilarityScore(data[i].overall_prob, tr)
-              tr.append($("<td>" + data[i].student1 + "rule5" + rule_5_data[i].student + "</td>"));
-              tr.append($("<td>" + data[i].student2 + "</td>"));
-              highlightSimilarityScore(data[i].rule1_prob, tr)
-              highlightSimilarityScore(data[i].rule2_prob, tr)
-              highlightSimilarityScore(data[i].rule3_prob, tr)
-              highlightSimilarityScore(data[i].rule4_prob, tr)
-              highlightSimilarityScore(data[i].rule6_prob, tr)
-              table_body.append(tr);
-              tr.on("click", function() {
-                let url = $(this).attr("data-href");
-                $.ajax({
-                  url: url,
-                  method: "GET",
-                  success: function(response) {
-                    let newWindow = window.open();
-                    newWindow.document.write(response);
-                  },
-                  error: function(error) {
-                    console.error("Failed to load details page: " + error);
-                  }
+            //const dataLength = Object.keys(data).length;
+            //console.log(dataLength);
+            for (let i=0; i < 30; i++) {
+                console.log("<%= urlPrefix %>")
+                console.log("hello")
+                let tr = $("<tr role=\"row\" class=\"even\" data-href=\"" +window.location.href+ "_pair?data1=" + data[i].student1 + "&data2=" + data[i].student2 + "\"></tr>");  // localhost:3000/cheat_detection_pair             localhost:3000/pl/.....
+                tr.append($("<td>" + (i+1) + "</td>"));
+                // tr.append($("<td>" + parseFloat(data[i].overall_prob).toFixed(2) + "</td>")); 
+                highlightSimilarityScore(data[i].overall_prob, tr)
+                tr.append($("<td>" + data[i].student1 + "</td>"));
+                tr.append($("<td>" + data[i].student2 + "</td>"));
+                highlightSimilarityScore(data[i].rule1_prob, tr)
+                highlightSimilarityScore(data[i].rule2_prob, tr)
+                highlightSimilarityScore(data[i].rule3_prob, tr)
+                highlightSimilarityScore(data[i].rule4_prob, tr)
+                highlightSimilarityScore(data[i].rule6_prob, tr)
+                table_body.append(tr);
+                tr.on("click", function() {
+                  let url = $(this).attr("data-href");
+                  $.ajax({
+                    url: url,
+                    method: "GET",
+                    success: function(response) {
+                      let newWindow = window.open();
+                      newWindow.document.write(response);
+                    },
+                    error: function(error) {
+                      console.error("Failed to load details page: " + error);
+                    }
+                  });
                 });
-              });
-            }              
+            }            
           }
           function highlightSimilarityScore(score, tr) {
             if (score<0.8) 
@@ -437,9 +439,9 @@
           </div>
         </div>
       </div>
-
+<!-- 
       <p>Pair Details Page</p>
-      <!-- pair detail on all rules -->
+      
       <div class="card mb-4">
         <div class="card-header bg-primary text-white">
           Detailed Report on All Rules
@@ -454,8 +456,8 @@
                 <th class="text-center">Quintiles</th>
                 <th class="text-center">Median Score</th>
               </tr>
-            </thead>
-            <tbody id="all-rules-details">
+            </thead> -->
+            <!-- <tbody id="all-rules-details">
               <% questions = [{"number":1, "rule_title":"Rule1", "rule_score":100, "median_score":20}, 
               {"number":1, "rule_title":"Rule2", "rule_score":70, "median_score":30}, 
               {"number":1, "rule_title":"Rule3", "rule_score":50, "median_score":40}, 
@@ -489,7 +491,7 @@
             </tbody>
           </table>
         </div>
-      </div>
+      </div> -->
     </div>
   </body>
 </html>
