@@ -50,15 +50,15 @@
     </script> 
     <!-- Grab all of the local variables for the results csv file -->
     <script>
-      let overall_data = localStorage.getItem('overall_data');
-      let time_data = localStorage.getItem('time_data');
-      let answer_data = localStorage.getItem('answer_data');
-      let order_data = localStorage.getItem('order_data');
-      let wrong_answer_data = localStorage.getItem('wrong_answer_data');
-      let score_data = localStorage.getItem('score_data');
+      let overall_data = JSON.parse(localStorage.getItem('overall_data'));
+      let time_data = JSON.parse(localStorage.getItem('time_data'));
+      let answer_data = JSON.parse(localStorage.getItem('answer_data'));
+      let order_data = JSON.parse(localStorage.getItem('order_data'));
+      let wrong_answer_data = JSON.parse(localStorage.getItem('wrong_answer_data'));
+      let score_data = JSON.parse(localStorage.getItem('score_data'));
+      let pair_dict = JSON.parse(localStorage.getItem('pair_dict'));
       
-      console.log("Time_data: ", time_data);
-      console.log("Overall_data: ", overall_data);
+      console.log("Pair_dict: ", pair_dict);
 
     </script>
     <%- include('../partials/navbar'); %>
@@ -69,30 +69,12 @@
         <div class="card-header bg-primary text-white" id="cardHeader">
           
         </div>
-        <script>
-          document.addEventListener('DOMContentLoaded', function () {
-            const queryParamsString = window.location.search.substr(1);
-            const queryParams = queryParamsString
-              .split('&')
-              .reduce((accumulator, singleQueryParam) => {
-                const [key, value] = singleQueryParam.split('=');
-                accumulator[key] = value;
-                return accumulator;
-              }, {});
-      
-            const div = document.getElementById('cardHeader');
-            div.textContent = "Detailed Report for Pair (" + queryParams.data1 + " , " + queryParams.data2 + ")";
-      
-            const p = document.getElementById('cardContent');
-            p.textContent = queryParams.data1 + " , " + queryParams.data2 + "have been detected by 6 abnormal behaviors with a confidence score of 86%: ";
-          });
-        </script>
         <p id='cardContent'style="margin:2%">
         </p>
         <ol>
 
         <!-- rule#0: Abnormal time-score-ration -->
-        <li> 
+        <!-- <li> 
           <div class="card-header bg-primary text-white" id="cardHeaderSub">
             Earn High Score in an Abnormally Short Period of Time (confidence: x%)
         </div>
@@ -138,15 +120,16 @@
               </div>
             </div>
           </div>
-        </li><br>
+        </li><br> -->
 
           <!-- rule#1 Time -->
         <li>
           <div class="card-header bg-primary text-white" id="cardHeaderSub">
-            Submit Multiple Exam Questions in Close Time (confidence: x%)
+            <p id='rule1prob'style="margin:2%"></p>
         </div>
-          <p>Out of 13 same questions, 9 questions (q1, q2, q4, q6, q7, q8, q9, q10, q14) are answered within 60 seconds time difference. Only 0.0025% pairs (1 out of 40000) among the whole class have answered 9 or more questions within 60 seconds.</p>
-          <p>A Quintiles Graph demonstrates how rare the count is</p>
+          <p id='rule1message'style="margin:2%"></p>
+          <!-- <p>Out of 13 same questions, 9 questions (q1, q2, q4, q6, q7, q8, q9, q10, q14) are answered within 60 seconds time difference. Only 0.0025% pairs (1 out of 40000) among the whole class have answered 9 or more questions within 60 seconds.</p>
+          <p>A Quintiles Graph demonstrates how rare the count is</p> -->
           <!-- <p>A Quintiles Graph demonstrates time diff distribution</p> -->
           <div id="accordion">
             <div class="card">
@@ -221,55 +204,17 @@
 
         </li><br>
 
-          <!-- rule#3 Order -->
-          <li> 
-            <div class="card-header bg-primary text-white" id="cardHeaderSub">
-              Submit Multiple Exam Questions in Close Order
-          </div>
-            <p>Out of 13 same questions, 2 questions (q4, q7) are flagged due to same wrong answers. Only 0.005% pairs (2 out of 40000) among the whole class have higher wrong answer similarity scores.</p>
-            <p>A Quintiles Graph demonstrates how rare the similarity is</p>
-            <div id="accordion">
-              <div class="card">
-                <div class="card-header" id="headingOne">
-                  <h5 class="mb-0">
-                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseOne">
-                      <p>See Submission Log Details</p>
-                    </button>
-                  </h5>
-                </div>
-                <div id="collapseThree" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
-                  <div class="card-body">
-                    <table class="table table-sm table-hover">
-                      <thread>
-                        <tr>
-                          <th class="text-center">Student1's Question Answering Order</th>
-                          <th class="text-center">Student1's Question Answering Order</th>
-                          <th class="text-center">Edit Distance</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td class="text-center">q1, q2, q4, q5, q6, q7, q8, q9, q10</td>
-                          <td class="text-center">q2, q1, q4, q5, q6, q7, q8, q9, q10</td>
-                          <td class="text-center">1</td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-          </li><br>
+          
 
 
           <!-- rule#2: same anwer -->
           <li> 
             <div class="card-header bg-primary text-white" id="cardHeaderSub">
-              Submit Multiple Exam Questions with Same Answers
+              <p id='rule2prob'style="margin:2%"></p>
           </div>
-            <p>Out of 13 same questions, 8 questions (q2, q4, q5, q6, q7, q8, q9, q10) are flagged due to same answers. Only 0.005% pairs (2 out of 40000) among the whole class have same or higher answer similarity scores.</p>
-            <p>A Quintiles Graph demonstrates how rare the similarity is</p>
+            <!-- <p>Out of 13 same questions, 8 questions (q2, q4, q5, q6, q7, q8, q9, q10) are flagged due to same answers. Only 0.005% pairs (2 out of 40000) among the whole class have same or higher answer similarity scores.</p>
+            <p>A Quintiles Graph demonstrates how rare the similarity is</p> -->
+            <p id='rule2message'style="margin:2%"></p>
             <div id="accordion">
               <div class="card">
                 <div class="card-header" id="headingOne">
@@ -312,14 +257,56 @@
 
           </li><br>
 
+          <!-- rule#3 Order -->
+          <li> 
+            <div class="card-header bg-primary text-white" id="cardHeaderSub">
+              <p id='rule3prob'style="margin:2%"></p>
+          </div>
+            <!-- <p>Out of 13 same questions, 2 questions (q4, q7) are flagged due to same wrong answers. Only 0.005% pairs (2 out of 40000) among the whole class have higher wrong answer similarity scores.</p>
+            <p>A Quintiles Graph demonstrates how rare the similarity is</p> -->
+            <p id='rule3message'style="margin:2%"></p>
+            <div id="accordion">
+              <div class="card">
+                <div class="card-header" id="headingOne">
+                  <h5 class="mb-0">
+                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseOne">
+                      <p>See Submission Log Details</p>
+                    </button>
+                  </h5>
+                </div>
+                <div id="collapseThree" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                  <div class="card-body">
+                    <table class="table table-sm table-hover">
+                      <thread>
+                        <tr>
+                          <th class="text-center">Student1's Question Answering Order</th>
+                          <th class="text-center">Student1's Question Answering Order</th>
+                          <th class="text-center">Edit Distance</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td class="text-center">q1, q2, q4, q5, q6, q7, q8, q9, q10</td>
+                          <td class="text-center">q2, q1, q4, q5, q6, q7, q8, q9, q10</td>
+                          <td class="text-center">1</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </li><br>
 
           <!-- rule#4: same wrong anwer -->
           <li> 
             <div class="card-header bg-primary text-white" id="cardHeaderSub">
-              Submit Multiple Exam Questions with Same Wrong Answers
+              <p id='rule4prob'style="margin:2%"></p>
           </div> 
-            <p>Out of 13 same questions, 2 questions (q4, q7) are flagged due to same wrong answers. Only 0.005% pairs (2 out of 40000) among the whole class have same or higher wrong answer similarity scores.</p>
-            <p>A Quintiles Graph demonstrates how rare the similarity is</p>
+            <!-- <p>Out of 13 same questions, 2 questions (q4, q7) are flagged due to same wrong answers. Only 0.005% pairs (2 out of 40000) among the whole class have same or higher wrong answer similarity scores.</p>
+            <p>A Quintiles Graph demonstrates how rare the similarity is</p> -->
+            <p id='rule4message'style="margin:2%"></p>
             <div id="accordion">
               <div class="card">
                 <div class="card-header" id="headingOne">
@@ -365,10 +352,11 @@
         <!-- rule#5: same score -->
         <li> 
           <div class="card-header bg-primary text-white" id="cardHeaderSub">
-            Submit Multiple Exam Questions with Same Score Distribution
+            <p id='rule6prob'style="margin:2%"></p>
         </div> 
-          <p>Out of 13 same questions, 8 questions (q2, q4, q5, q6, q7, q8, q9, q10) are flagged due to same score distribution. Only 0.005% pairs (2 out of 40000) among the whole class have same or higher wrong answer similarity scores.</p>
-          <p>A Quintiles Graph demonstrates how rare the similarity is</p>
+          <!-- <p>Out of 13 same questions, 8 questions (q2, q4, q5, q6, q7, q8, q9, q10) are flagged due to same score distribution. Only 0.005% pairs (2 out of 40000) among the whole class have same or higher wrong answer similarity scores.</p>
+          <p>A Quintiles Graph demonstrates how rare the similarity is</p> -->
+          <p id='rule6message'style="margin:2%"></p>
           <div id="accordion">
             <div class="card">
               <div class="card-header" id="headingOne">
@@ -412,7 +400,51 @@
         </li><br>
 
       </ol>
+      <script>
+        document.addEventListener('DOMContentLoaded', function () {
+          const queryParamsString = window.location.search.substr(1);
+          const queryParams = queryParamsString
+            .split('&')
+            .reduce((accumulator, singleQueryParam) => {
+              const [key, value] = singleQueryParam.split('=');
+              accumulator[key] = value;
+              return accumulator;
+            }, {});
+    
+          const div = document.getElementById('cardHeader');
+          div.textContent = "Detailed Report for Pair (" + queryParams.data1 + " , " + queryParams.data2 + ")";
+          
+          let pair_dict = JSON.parse(localStorage.getItem('pair_dict'));
+          const p = document.getElementById('cardContent');
+          confidence = pair_dict[queryParams.data1+queryParams.data2]["confidence"]
+          p.textContent = "Student "+ queryParams.data1 + ", Student " + queryParams.data2 + " have been detected for abnormal behaviors with a confidence score of: " + confidence + "%";
 
+          const rule1prob = document.getElementById('rule1prob');
+          rule1prob.textContent = "Submitted Multiple Exam Questions in Close Time, confidence: "+ pair_dict[queryParams.data1+queryParams.data2]["rule1_prob"] + "%"
+          const rule1message = document.getElementById('rule1message');
+          rule1message.textContent = "Violation: "+ pair_dict[queryParams.data1+queryParams.data2]["rule1_violation"]
+
+          const rule2prob = document.getElementById('rule2prob');
+          rule2prob.textContent = "Submitted Multiple Exam Questions with Same Answers, confidence: "+ pair_dict[queryParams.data1+queryParams.data2]["rule2_prob"] + "%"
+          const rule2message = document.getElementById('rule2message');
+          rule2message.textContent = "Violation: "+ pair_dict[queryParams.data1+queryParams.data2]["rule2_violation"]
+
+          const rule3prob = document.getElementById('rule3prob');
+          rule3prob.textContent = "Submitted Multiple Exam Questions in Close Order, confidence: "+ pair_dict[queryParams.data1+queryParams.data2]["rule3_prob"] + "%"
+          const rule3message = document.getElementById('rule3message');
+          rule3message.textContent = "Violation: "+ pair_dict[queryParams.data1+queryParams.data2]["rule3_violation"]
+
+          const rule4prob = document.getElementById('rule4prob');
+          rule4prob.textContent = "Submitted Multiple Exam Questions with Same Wrong Answers, confidence: "+ pair_dict[queryParams.data1+queryParams.data2]["rule4_prob"] + "%"
+          const rule4message = document.getElementById('rule4message');
+          rule4message.textContent = "Violation: "+ pair_dict[queryParams.data1+queryParams.data2]["rule4_violation"]
+
+          const rule6prob = document.getElementById('rule6prob');
+          rule6prob.textContent = "Submitted Multiple Exam Questions with Same Score Distribution, confidence: "+ pair_dict[queryParams.data1+queryParams.data2]["rule6_prob"] + "%"
+          const rule6message = document.getElementById('rule6message');
+          rule6message.textContent = "Violation: "+ pair_dict[queryParams.data1+queryParams.data2]["rule6_violation"]
+        });
+      </script>
 
       <!-- Footer for download report -->
       <div class="card-footer">

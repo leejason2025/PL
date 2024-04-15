@@ -138,17 +138,17 @@
               
             }
             if (ruleData === 'overall_prob') { overall_data = dict;
-              localStorage.setItem('overall_data', overall_data); }
+              localStorage.setItem('overall_data', JSON.stringify(overall_data)); }
             else if (ruleData === 'rule1_prob') { time_data = dict; 
-            localStorage.setItem('time_data', time_data);}
+            localStorage.setItem('time_data', JSON.stringify(time_data));}
             else if (ruleData === 'rule2_prob') { answer_data = dict; 
-              localStorage.setItem('answer_data', answer_data);}
+              localStorage.setItem('answer_data', JSON.stringify(answer_data));}
             else if (ruleData === 'rule3_prob') { order_data = dict;
-              localStorage.setItem('order_data', order_data); }
+              localStorage.setItem('order_data', JSON.stringify(order_data)); }
             else if (ruleData === 'rule4_prob') { wrong_answer_data = dict; 
-              localStorage.setItem('wrong_answer_data', wrong_answer_data);}
+              localStorage.setItem('wrong_answer_data', JSON.stringify(wrong_answer_data));}
             else if (ruleData === 'rule6_prob') { score_data = dict; 
-              localStorage.setItem('score_data', score_data);}
+              localStorage.setItem('score_data', JSON.stringify(score_data));}
             
           }
           const uploadcsv = document.getElementById('uploadconfirm')
@@ -272,12 +272,34 @@
             //<a href="<%= urlPrefix %>/cheat_detection_pair/">cheat_detection_pair</a>
             //const dataLength = Object.keys(data).length;
             //console.log(dataLength);
+            let pair_dict = {};
             for (let i=0; i < 30; i++) {
                 console.log("<%= urlPrefix %>")
                 console.log("hello")
                 let tr = $("<tr role=\"row\" class=\"even\" data-href=\"" +window.location.href+ "_pair?data1=" + data[i].student1 + "&data2=" + data[i].student2 + "\"></tr>");  // localhost:3000/cheat_detection_pair             localhost:3000/pl/.....
                 tr.append($("<td>" + (i+1) + "</td>"));
                 // tr.append($("<td>" + parseFloat(data[i].overall_prob).toFixed(2) + "</td>")); 
+                // {key "Student1Student2" : val [confidence value, rule 1-6 violation message, rule 1-6 prob, rule 1-6 percentile]}
+                // Making entire student pair dictionary to store all necessary values
+                let k = data[i].student1+data[i].student2
+                let v = {}
+                v["confidence"] = parseFloat((data[i].overall_prob*100).toFixed(2))
+                v["rule1_violation"] = data[i].rule1_violation
+                v["rule1_prob"] = parseFloat((data[i].rule1_prob*100).toFixed(2))
+                v["rule1_percentile"] = data[i].rule1_percentile
+                v["rule2_violation"] = data[i].rule2_violation
+                v["rule2_prob"] = parseFloat((data[i].rule2_prob*100).toFixed(2))
+                v["rule2_percentile"] = data[i].rule2_percentile
+                v["rule3_violation"] = data[i].rule3_violation
+                v["rule3_prob"] = parseFloat((data[i].rule3_prob*100).toFixed(2))
+                v["rule3_percentile"] = data[i].rule3_percentile
+                v["rule4_violation"] = data[i].rule4_violation
+                v["rule4_prob"] = parseFloat((data[i].rule4_prob*100).toFixed(2))
+                v["rule4_percentile"] = data[i].rule4_percentile
+                v["rule6_violation"] = data[i].rule6_violation
+                v["rule6_prob"] = parseFloat((data[i].rule6_prob*100).toFixed(2))
+                v["rule6_percentile"] = data[i].rule6_percentile
+                pair_dict[k] = v
                 highlightSimilarityScore(data[i].overall_prob, tr)
                 tr.append($("<td>" + data[i].student1 + "</td>"));
                 tr.append($("<td>" + data[i].student2 + "</td>"));
@@ -301,7 +323,8 @@
                     }
                   });
                 });
-            }            
+            }
+            localStorage.setItem('pair_dict', JSON.stringify(pair_dict));           
           }
           function highlightSimilarityScore(score, tr) {
             if (score<0.8) 
