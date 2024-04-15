@@ -60,7 +60,7 @@
         <div class="card-footer">
           <small>
             <ul>
-              <li><strong>Number of students:</strong> 200 </li>
+              <li><strong>Number of students:</strong> <p id='numstudents'style="margin:2%"></p> </li>
               <li><strong>Time span: </strong> Students need to finish the exam within 48 hours during 48 hours. </li>
               <li><strong>Exam questions: </strong> a total of 15 questions are shuffled and with multiple variants.
             </li></ul>
@@ -175,6 +175,8 @@
           
           var rule5_data = "";
           function assignRule5(data) {
+            const numstudents = document.getElementById('numstudents');
+            numstudents.textContent = data.length
             rule5_data = data
             let rule5_dict = {};
             for (let i=0; i < data.length; i++) {
