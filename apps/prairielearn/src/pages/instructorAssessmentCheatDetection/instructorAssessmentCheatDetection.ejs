@@ -170,11 +170,26 @@
                   updateDetailedReport(results.data);
                   }
               });
+              
             });
           
-          var rule_5_data = "";
+          var rule5_data = "";
           function assignRule5(data) {
-            rule_5_data = data
+            rule5_data = data
+            let rule5_dict = {};
+            for (let i=0; i < data.length; i++) {
+              let k = data[i].student
+              let v = {}
+              v["rule5_score_time_ratio"] = data[i].rule5_score_time_ratio
+              v["rule5_total_score"] = data[i].rule5_total_score
+              v["rule5_total_time"] = data[i].rule5_total_time
+              v["rule5_ratio_percentile"] = data[i].rule5_ratio_percentile
+              v["rule5_tot_score_percentile"] = data[i].rule5_tot_score_percentile
+              v["rule5_tot_time_percentile"] = data[i].rule5_tot_time_percentile
+              rule5_dict[k] = v
+            }
+            localStorage.setItem('rule5_pair_dict', JSON.stringify(rule5_dict)); 
+            console.log(rule5_dict);
           };
           const uploadcsv2 = document.getElementById('uploadconfirm')
             .addEventListener('click', () => {
@@ -274,8 +289,6 @@
             //console.log(dataLength);
             let pair_dict = {};
             for (let i=0; i < 30; i++) {
-                console.log("<%= urlPrefix %>")
-                console.log("hello")
                 let tr = $("<tr role=\"row\" class=\"even\" data-href=\"" +window.location.href+ "_pair?data1=" + data[i].student1 + "&data2=" + data[i].student2 + "\"></tr>");  // localhost:3000/cheat_detection_pair             localhost:3000/pl/.....
                 tr.append($("<td>" + (i+1) + "</td>"));
                 // tr.append($("<td>" + parseFloat(data[i].overall_prob).toFixed(2) + "</td>")); 
