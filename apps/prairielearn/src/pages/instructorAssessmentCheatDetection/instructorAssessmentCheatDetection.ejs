@@ -40,7 +40,7 @@
         <input type = "file" id = "uploadcsv1">
       </div>
       <div>
-        <label for="uploadcsv2">Rule 5 Results    </label>
+        <label for="uploadcsv2">Rule 5 Results</label>
         <input type = "file" id = "uploadcsv2">
       </div>
       <button type="button" class="btn btn-sm btn-primary" id="uploadconfirm"> Upload CSVs</button>
@@ -60,9 +60,9 @@
         <div class="card-footer">
           <small>
             <ul>
-              <li><strong>Number of students:</strong> <p id='numstudents'style="margin:2%"></p> </li>
-              <li><strong>Time span: </strong> Students need to finish the exam within 48 hours during 48 hours. </li>
-              <li><strong>Exam questions: </strong> a total of 15 questions are shuffled and with multiple variants.
+              <li><strong>Number of students:</strong> <span id='numstudents'></span> </li>
+              <li><strong>Time span: </strong> 48 </li>
+              <li><strong>Exam questions: </strong> 8
             </li></ul>
           </small>
 
@@ -135,8 +135,7 @@
                 dict["0.8-0.9"] += 1;
               else
                 dict["0.9-1"] += 1;
-              
-            }
+            } 
             if (ruleData === 'overall_prob') { overall_data = dict;
               localStorage.setItem('overall_data', JSON.stringify(overall_data)); }
             else if (ruleData === 'rule1_prob') { time_data = dict; 
@@ -188,10 +187,11 @@
               v["rule5_ratio_percentile"] = data[i].rule5_ratio_percentile
               v["rule5_tot_score_percentile"] = data[i].rule5_tot_score_percentile
               v["rule5_tot_time_percentile"] = data[i].rule5_tot_time_percentile
+              v["submission_times"] = data[i].q_times
               rule5_dict[k] = v
             }
-            localStorage.setItem('rule5_pair_dict', JSON.stringify(rule5_dict)); 
-            console.log(rule5_dict);
+            localStorage.setItem('rule5_dict', JSON.stringify(rule5_dict)); 
+            //console.log(rule5_dict);
           };
           const uploadcsv2 = document.getElementById('uploadconfirm')
             .addEventListener('click', () => {
@@ -277,7 +277,7 @@
               group_count[key] = score_data[key]
               }
             }
-            console.log(Object.values(group_count));
+            //console.log(Object.values(group_count));
             myChart.data.datasets[0].data = Object.values(group_count);
           
             myChart.update();
@@ -348,8 +348,8 @@
               return tr.append($("<td style=background:#fb8072>"+parseFloat(score).toFixed(2)+"</td>"));
           }
           function updateDetailedReport(data) {
-            console.log("data");
-            console.log(data);
+            //console.log("data");
+            //console.log(data);
             // get html element
             let table_body = $("tbody#all-rules-details");
             // append rows

@@ -45,8 +45,8 @@
       $(function () {
           $('[data-toggle="popover"]').popover({sanitize: false})
       });
-      console.log(window.location.search.substr(1))
-      console.log(window.location)
+      // console.log(window.location.search.substr(1))
+      // console.log(window.location)
     </script> 
     <!-- Grab all of the local variables for the results csv file -->
     <script>
@@ -58,7 +58,7 @@
       let score_data = JSON.parse(localStorage.getItem('score_data'));
       let pair_dict = JSON.parse(localStorage.getItem('pair_dict'));
       
-      console.log("Pair_dict: ", pair_dict);
+      //console.log("Pair_dict: ", pair_dict);
 
     </script>
     <%- include('../partials/navbar'); %>
@@ -99,52 +99,9 @@
                         <th class="text-center"></th>
                         <th class="text-center">student1</th>
                         <th class="text-center">student2</th>
-                        <th class="text-center">Time Difference</th>
                       </tr>
                     </thead>
-                    <tbody>
-                      <tr>
-                        <td>Q1 Start Time</td>
-                        <td class="text-center">23:11:35</td>
-                        <td class="text-center">23:11:45</td>
-                        <td class="text-center">00:00:10</td>
-                      </tr>
-                      <tr>
-                        <td>Q1 End Time</td>
-                        <td class="text-center">23:14:11</td>
-                        <td class="text-center">23:12:55</td>
-                        <td class="text-center">00:01:16</td>
-                      </tr>
-                      <tr>
-                        <td>Q2 Start Time</td>
-                        <td class="text-center">23:15:33</td>
-                        <td class="text-center">23:12:59</td>
-                        <td class="text-center">00:02:34</td>
-                      </tr>
-                      <tr>
-                        <td>Q2 End Time</td>
-                        <td class="text-center">23:18:55</td>
-                        <td class="text-center">23:15:01</td>
-                        <td class="text-center">00:03:54</td>
-                      </tr>
-                      <tr>
-                        <td>Q3 Start Time</td>
-                        <td class="text-center">23:19:01</td>
-                        <td class="text-center">23:15:10</td>
-                        <td class="text-center">00:03:51</td>
-                      </tr>
-                      <tr>
-                        <td>Q3 End Time</td>
-                        <td class="text-center">23:25:46</td>
-                        <td class="text-center">23:20:55</td>
-                        <td class="text-center">00:04:09</td>
-                      </tr>
-                      <tr>
-                        <td>...</td>
-                        <td class="text-center">...</td>
-                        <td class="text-center">...</td>
-                        <td class="text-center">...</td>
-                      </tr>
+                    <tbody id="table1">
                     </tbody>
                   </table>
                 </div>
@@ -409,6 +366,12 @@
           div.textContent = "Detailed Report for Pair (" + queryParams.data1 + " , " + queryParams.data2 + ")";
           
           let pair_dict = JSON.parse(localStorage.getItem('pair_dict'));
+          let rule5_dict = JSON.parse(localStorage.getItem('rule5_dict'));
+          let submissionTimes = JSON.parse(rule5_dict[queryParams.data1]["submission_times"].replace(/\'/g, '"'));
+          let submissionTimes2 = JSON.parse(rule5_dict[queryParams.data2]["submission_times"].replace(/\'/g, '"'));
+          console.log(submissionTimes);
+          console.log(typeof submissionTimes);
+
           const p = document.getElementById('cardContent');
           confidence = pair_dict[queryParams.data1+queryParams.data2]["confidence"]
           p.textContent = "Student "+ queryParams.data1 + ", Student " + queryParams.data2 + " have been detected for abnormal behaviors with a confidence score of: " + confidence + "%";
@@ -417,6 +380,17 @@
           rule1prob.textContent = "Submitted Multiple Exam Questions in Close Time, confidence: "+ pair_dict[queryParams.data1+queryParams.data2]["rule1_prob"] + "%"
           const rule1message = document.getElementById('rule1message');
           rule1message.textContent = "Violation: "+ pair_dict[queryParams.data1+queryParams.data2]["rule1_violation"]
+          const tableBody = document.getElementById("table1");
+          tableBody.innerHTML = ''; // Clear existing rows
+
+          Object.entries(submissionTimes).forEach(([key, value]) => {
+                const row = `<tr>
+                <td>${key} Submission Time</td>
+                <td class="text-center">${value}</td>
+                <td class="text-center">${submissionTimes2[key]}</td>
+            </tr>`;
+            tableBody.innerHTML += row;
+          });
 
           const rule2prob = document.getElementById('rule2prob');
           rule2prob.textContent = "Submitted Multiple Exam Questions with Same Answers, confidence: "+ pair_dict[queryParams.data1+queryParams.data2]["rule2_prob"] + "%"
