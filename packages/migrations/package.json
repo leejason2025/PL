@@ -31,7 +31,7 @@
     "@prairielearn/named-locks": "workspace:^",
     "@prairielearn/postgres": "workspace:^",
     "fs-extra": "^11.2.0",
-    "serialize-error": "^8.1.0",
+    "serialize-error": "^11.0.3",
     "zod": "^3.22.4"
   }
 }
