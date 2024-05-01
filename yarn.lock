@@ -8739,12 +8739,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-no-floating-promise@npm:^1.0.2":
-  version: 1.0.2
-  resolution: "eslint-plugin-no-floating-promise@npm:1.0.2"
+"eslint-plugin-no-floating-promise@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "eslint-plugin-no-floating-promise@npm:2.0.0"
   dependencies:
     requireindex: 1.2.0
-  checksum: fe4f3c1b0b60775508e86dfe2ad14fd1bf2020b48cd3222e665f1d9f29179428b7bcbc136dd6f2ab12a7edfd95f5ad3c4b96f8a6c9600cbc73da307a792b84d2
+  checksum: 82804ffe4a71c8d15bf5ee35c144899315eebeb43d5365326c85789cc14ae10d0ea677c76f488cedab93f631211a36cd48389ca0d18119afe9bff134aed7ef52
   languageName: node
   linkType: hard
 
@@ -13736,7 +13736,7 @@ __metadata:
     eslint-import-resolver-typescript: ^3.6.1
     eslint-plugin-import: 2.29.1
     eslint-plugin-mocha: ^10.3.0
-    eslint-plugin-no-floating-promise: ^1.0.2
+    eslint-plugin-no-floating-promise: ^2.0.0
     eslint-plugin-no-only-tests: ^3.1.0
     globby: ^11.1.0
     htmlhint: ^1.1.4
