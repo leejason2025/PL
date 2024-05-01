@@ -3472,7 +3472,7 @@ __metadata:
     fs-extra: ^11.2.0
     generic-pool: ^3.9.0
     get-port: ^5.1.1
-    google-auth-library: ^9.6.3
+    google-auth-library: ^9.9.0
     he: ^1.2.0
     highlight.js: ^11.9.0
     htmx.org: ^1.9.9
@@ -9855,9 +9855,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"google-auth-library@npm:^9.6.3":
-  version: 9.6.3
-  resolution: "google-auth-library@npm:9.6.3"
+"google-auth-library@npm:^9.9.0":
+  version: 9.9.0
+  resolution: "google-auth-library@npm:9.9.0"
   dependencies:
     base64-js: ^1.3.0
     ecdsa-sig-formatter: ^1.0.11
@@ -9865,7 +9865,7 @@ __metadata:
     gcp-metadata: ^6.1.0
     gtoken: ^7.0.0
     jws: ^4.0.0
-  checksum: 46174191de15ec56110ac0394ae9d1c56fb6aa293809d45170b2ff570130d7e3f3e82fa78d413908862a2d0da3fa946b72f1074000f4d52579eb17367e49e44d
+  checksum: 78f48d445374e6bae97a9ccc711369ab622d5eb7cb4f1b68d0ddea98ef38b9117a0280ca552bfe06b6f89a4bfd5d31ce55c893add3992b8f31ae82cf9834c8a3
   languageName: node
   linkType: hard
 
