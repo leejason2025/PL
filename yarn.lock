@@ -2918,7 +2918,7 @@ __metadata:
   dependencies:
     "@prairielearn/tsconfig": "*"
     "@types/node": ^20.11.24
-    node-fetch: ^2.7.0
+    node-fetch: ^3.3.2
     typescript: ^5.3.3
     zod: ^3.22.4
   languageName: unknown
@@ -2988,7 +2988,7 @@ __metadata:
     get-port: ^5.1.1
     globby: ^11.1.0
     mocha: ^10.3.0
-    node-fetch: ^2.7.0
+    node-fetch: ^3.3.2
     pretty-bytes: ^5.6.0
     tmp-promise: ^3.0.3
     tsx: ^4.7.1
@@ -3502,7 +3502,7 @@ __metadata:
     morphdom: ^2.7.2
     multer: ^1.4.5-lts.1
     mustache: ^4.2.0
-    node-fetch: ^2.7.0
+    node-fetch: ^3.3.2
     node-jose: ^2.2.0
     nodemon: ^3.1.0
     numeric: ^1.2.6
@@ -3622,7 +3622,7 @@ __metadata:
     express-async-handler: ^1.2.0
     fetch-cookie: ^3.0.1
     mocha: ^10.3.0
-    node-fetch: ^2.7.0
+    node-fetch: ^3.3.2
     nyc: ^15.1.0
     on-headers: ^1.0.2
     set-cookie-parser: ^2.6.0
@@ -3686,7 +3686,7 @@ __metadata:
     ioredis: ^5.3.2
     lodash: ^4.17.21
     mocha: ^10.3.0
-    node-fetch: 2.7.0
+    node-fetch: 3.3.2
     nodemon: ^3.1.0
     tsx: ^4.7.1
     typescript: ^5.3.3
@@ -7757,6 +7757,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"data-uri-to-buffer@npm:^4.0.0":
+  version: 4.0.1
+  resolution: "data-uri-to-buffer@npm:4.0.1"
+  checksum: 0d0790b67ffec5302f204c2ccca4494f70b4e2d940fea3d36b09f0bb2b8539c2e86690429eb1f1dc4bcc9e4df0644193073e63d9ee48ac9fce79ec1506e4aa4c
+  languageName: node
+  linkType: hard
+
 "data-urls@npm:^1.1.0":
   version: 1.1.0
   resolution: "data-urls@npm:1.1.0"
@@ -9168,6 +9175,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"fetch-blob@npm:^3.1.2, fetch-blob@npm:^3.1.4":
+  version: 3.2.0
+  resolution: "fetch-blob@npm:3.2.0"
+  dependencies:
+    node-domexception: ^1.0.0
+    web-streams-polyfill: ^3.0.3
+  checksum: f19bc28a2a0b9626e69fd7cf3a05798706db7f6c7548da657cbf5026a570945f5eeaedff52007ea35c8bcd3d237c58a20bf1543bc568ab2422411d762dd3d5bf
+  languageName: node
+  linkType: hard
+
 "fetch-cookie@npm:^3.0.1":
   version: 3.0.1
   resolution: "fetch-cookie@npm:3.0.1"
@@ -9423,6 +9440,15 @@ __metadata:
     combined-stream: ^1.0.6
     mime-types: ^2.1.12
   checksum: 10c1780fa13dbe1ff3100114c2ce1f9307f8be10b14bf16e103815356ff567b6be39d70fc4a40f8990b9660012dc24b0f5e1dde1b6426166eb23a445ba068ca3
+  languageName: node
+  linkType: hard
+
+"formdata-polyfill@npm:^4.0.10":
+  version: 4.0.10
+  resolution: "formdata-polyfill@npm:4.0.10"
+  dependencies:
+    fetch-blob: ^3.1.2
+  checksum: 82a34df292afadd82b43d4a740ce387bc08541e0a534358425193017bf9fb3567875dc5f69564984b1da979979b70703aa73dee715a17b6c229752ae736dd9db
   languageName: node
   linkType: hard
 
@@ -12628,7 +12654,25 @@ __metadata:
   languageName: node
   linkType: hard
 
-"node-fetch@npm:2.7.0, node-fetch@npm:^2.6.2, node-fetch@npm:^2.6.7, node-fetch@npm:^2.6.9, node-fetch@npm:^2.7.0":
+"node-domexception@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "node-domexception@npm:1.0.0"
+  checksum: ee1d37dd2a4eb26a8a92cd6b64dfc29caec72bff5e1ed9aba80c294f57a31ba4895a60fd48347cf17dd6e766da0ae87d75657dfd1f384ebfa60462c2283f5c7f
+  languageName: node
+  linkType: hard
+
+"node-fetch@npm:3.3.2, node-fetch@npm:^3.3.2":
+  version: 3.3.2
+  resolution: "node-fetch@npm:3.3.2"
+  dependencies:
+    data-uri-to-buffer: ^4.0.0
+    fetch-blob: ^3.1.4
+    formdata-polyfill: ^4.0.10
+  checksum: 06a04095a2ddf05b0830a0d5302699704d59bda3102894ea64c7b9d4c865ecdff2d90fd042df7f5bc40337266961cb6183dcc808ea4f3000d024f422b462da92
+  languageName: node
+  linkType: hard
+
+"node-fetch@npm:^2.6.2, node-fetch@npm:^2.6.7, node-fetch@npm:^2.6.9":
   version: 2.7.0
   resolution: "node-fetch@npm:2.7.0"
   dependencies:
@@ -16794,6 +16838,13 @@ __metadata:
   version: 1.1.4
   resolution: "web-namespaces@npm:1.1.4"
   checksum: 5149842ccbfbc56fe4f8758957b3f8c8616a281874a5bb84aa1b305e4436a9bad853d21c629a7b8f174902449e1489c7a6c724fccf60965077c5636bd8aed42b
+  languageName: node
+  linkType: hard
+
+"web-streams-polyfill@npm:^3.0.3":
+  version: 3.3.3
+  resolution: "web-streams-polyfill@npm:3.3.3"
+  checksum: 21ab5ea08a730a2ef8023736afe16713b4f2023ec1c7085c16c8e293ee17ed085dff63a0ad8722da30c99c4ccbd4ccd1b2e79c861829f7ef2963d7de7004c2cb
   languageName: node
   linkType: hard
 
