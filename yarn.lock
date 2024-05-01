@@ -3398,7 +3398,7 @@ __metadata:
     "@types/lodash": ^4.14.202
     "@types/loopbench": ^1.2.4
     "@types/memorystream": ^0.3.4
-    "@types/mime": ^3.0.4
+    "@types/mime": ^4.0.0
     "@types/mocha": ^10.0.6
     "@types/multer": ^1.4.11
     "@types/mustache": ^4.2.5
@@ -3496,7 +3496,7 @@ __metadata:
     mathjax: ^3.2.2
     memorystream: ^0.3.1
     mersenne: 0.0.4
-    mime: ^3.0.0
+    mime: ^4.0.3
     mocha: ^10.3.0
     mocha-steps: ^1.3.0
     morphdom: ^2.7.2
@@ -5000,7 +5000,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/mime@npm:*, @types/mime@npm:^3.0.4":
+"@types/mime@npm:*":
   version: 3.0.4
   resolution: "@types/mime@npm:3.0.4"
   checksum: a6139c8e1f705ef2b064d072f6edc01f3c099023ad7c4fce2afc6c2bf0231888202adadbdb48643e8e20da0ce409481a49922e737eca52871b3dc08017455843
@@ -5011,6 +5011,15 @@ __metadata:
   version: 1.3.2
   resolution: "@types/mime@npm:1.3.2"
   checksum: 0493368244cced1a69cb791b485a260a422e6fcc857782e1178d1e6f219f1b161793e9f87f5fae1b219af0f50bee24fcbe733a18b4be8fdd07a38a8fb91146fd
+  languageName: node
+  linkType: hard
+
+"@types/mime@npm:^4.0.0":
+  version: 4.0.0
+  resolution: "@types/mime@npm:4.0.0"
+  dependencies:
+    mime: "*"
+  checksum: e19258adf39badcfa1ed1deecc081f5d4fbbbd655bb6ae23fc6f0101309c61e95feb66f6a839dfe908d4c7b82e9ef39717d2de0212eebffa5cdabdc3f5cefcc1
   languageName: node
   linkType: hard
 
@@ -12189,21 +12198,21 @@ __metadata:
   languageName: node
   linkType: hard
 
+"mime@npm:*, mime@npm:^4.0.3":
+  version: 4.0.3
+  resolution: "mime@npm:4.0.3"
+  bin:
+    mime: bin/cli.js
+  checksum: 17f7bf9f566f0127fac3b93acd5dd37fcfa7cce5842b9fe599fdf7a716cbc3d8b69aac0e8a1a5df834d44a610a51d04eea6e38d2dbc2f1a2326e9a759a5821dc
+  languageName: node
+  linkType: hard
+
 "mime@npm:1.6.0":
   version: 1.6.0
   resolution: "mime@npm:1.6.0"
   bin:
     mime: cli.js
   checksum: fef25e39263e6d207580bdc629f8872a3f9772c923c7f8c7e793175cee22777bbe8bba95e5d509a40aaa292d8974514ce634ae35769faa45f22d17edda5e8557
-  languageName: node
-  linkType: hard
-
-"mime@npm:^3.0.0":
-  version: 3.0.0
-  resolution: "mime@npm:3.0.0"
-  bin:
-    mime: cli.js
-  checksum: f43f9b7bfa64534e6b05bd6062961681aeb406a5b53673b53b683f27fcc4e739989941836a355eef831f4478923651ecc739f4a5f6e20a76487b432bfd4db928
   languageName: node
   linkType: hard
 
