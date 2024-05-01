@@ -15,7 +15,7 @@
     "@prairielearn/tsconfig": "workspace:^",
     "@types/node": "^20.11.24",
     "tsx": "^4.7.1",
-    "typescript": "^5.3.3"
+    "typescript": "^5.4.5"
   },
   "dependencies": {
     "@sentry/node": "^7.104.0",
