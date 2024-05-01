@@ -2908,7 +2908,7 @@ __metadata:
     "@prairielearn/tsconfig": "*"
     "@types/node": ^20.11.24
     typescript: ^5.3.3
-    zod: ^3.22.4
+    zod: ^3.23.5
   languageName: unknown
   linkType: soft
 
@@ -2920,7 +2920,7 @@ __metadata:
     "@types/node": ^20.11.24
     node-fetch: ^2.7.0
     typescript: ^5.3.3
-    zod: ^3.22.4
+    zod: ^3.23.5
   languageName: unknown
   linkType: soft
 
@@ -2968,7 +2968,7 @@ __metadata:
     ioredis: ^5.3.2
     lru-cache: ^10.2.0
     typescript: ^5.3.3
-    zod: ^3.22.4
+    zod: ^3.23.5
   languageName: unknown
   linkType: soft
 
@@ -3017,7 +3017,7 @@ __metadata:
     tmp-promise: ^3.0.3
     tsx: ^4.7.1
     typescript: ^5.3.3
-    zod: ^3.22.4
+    zod: ^3.23.5
   languageName: unknown
   linkType: soft
 
@@ -3144,7 +3144,7 @@ __metadata:
     typescript-cp: ^0.1.9
     winston: ^3.11.0
     winston-transport: ^4.7.0
-    zod: ^3.22.4
+    zod: ^3.23.5
   languageName: unknown
   linkType: soft
 
@@ -3186,7 +3186,7 @@ __metadata:
     logform: ^2.6.0
     typescript: ^5.3.3
     winston: ^3.11.0
-    zod: ^3.22.4
+    zod: ^3.23.5
   languageName: unknown
   linkType: soft
 
@@ -3211,7 +3211,7 @@ __metadata:
     tsx: ^4.7.1
     typescript: ^5.3.3
     typescript-cp: ^0.1.9
-    zod: ^3.22.4
+    zod: ^3.23.5
   languageName: unknown
   linkType: soft
 
@@ -3325,7 +3325,7 @@ __metadata:
     pg-pool: ^3.6.1
     tsx: ^4.7.1
     typescript: ^5.3.3
-    zod: ^3.22.4
+    zod: ^3.23.5
   languageName: unknown
   linkType: soft
 
@@ -3558,7 +3558,7 @@ __metadata:
     winston: ^3.11.0
     xml2js: ^0.6.2
     yargs-parser: ^21.1.1
-    zod: ^3.22.4
+    zod: ^3.23.5
   languageName: unknown
   linkType: soft
 
@@ -3693,7 +3693,7 @@ __metadata:
     typescript-cp: ^0.1.9
     uuid: ^9.0.1
     yargs-parser: ^21.1.1
-    zod: ^3.22.4
+    zod: ^3.23.5
   languageName: unknown
   linkType: soft
 
@@ -17381,10 +17381,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"zod@npm:^3.22.4":
-  version: 3.22.4
-  resolution: "zod@npm:3.22.4"
-  checksum: 80bfd7f8039b24fddeb0718a2ec7c02aa9856e4838d6aa4864335a047b6b37a3273b191ef335bf0b2002e5c514ef261ffcda5a589fb084a48c336ffc4cdbab7f
+"zod@npm:^3.23.5":
+  version: 3.23.5
+  resolution: "zod@npm:3.23.5"
+  checksum: 4b83c93c4d43640b31eb4289efedb23f303a272c39f8b492ee4b2fec1a1da0de078db3786a2e6cc08d6803f03e842af2ae16b430c7f2e0fea3eba16b72a9db36
   languageName: node
   linkType: hard
 
