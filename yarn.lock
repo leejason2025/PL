@@ -2966,7 +2966,7 @@ __metadata:
     "@prairielearn/sentry": "workspace:^"
     "@prairielearn/tsconfig": "*"
     ioredis: ^5.3.2
-    lru-cache: ^10.2.0
+    lru-cache: ^10.2.2
     typescript: ^5.3.3
     zod: ^3.22.4
   languageName: unknown
@@ -3492,7 +3492,7 @@ __metadata:
     klaw: ^4.1.0
     lodash: ^4.17.21
     loopbench: ^2.0.0
-    lru-cache: ^10.2.0
+    lru-cache: ^10.2.2
     mathjax: ^3.2.2
     memorystream: ^0.3.1
     mersenne: 0.0.4
@@ -11774,10 +11774,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lru-cache@npm:^10.0.1, lru-cache@npm:^10.2.0, lru-cache@npm:^9.1.1 || ^10.0.0":
+"lru-cache@npm:^10.0.1, lru-cache@npm:^9.1.1 || ^10.0.0":
   version: 10.2.0
   resolution: "lru-cache@npm:10.2.0"
   checksum: eee7ddda4a7475deac51ac81d7dd78709095c6fa46e8350dc2d22462559a1faa3b81ed931d5464b13d48cbd7e08b46100b6f768c76833912bc444b99c37e25db
+  languageName: node
+  linkType: hard
+
+"lru-cache@npm:^10.2.2":
+  version: 10.2.2
+  resolution: "lru-cache@npm:10.2.2"
+  checksum: 98e8fc93691c546f719a76103ef2bee5a3ac823955c755a47641ec41f8c7fafa1baeaba466937cc1cbfa9cfd47e03536d10e2db3158a64ad91ff3a58a32c893e
   languageName: node
   linkType: hard
 
