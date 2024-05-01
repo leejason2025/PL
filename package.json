@@ -26,7 +26,7 @@
     "eslint-import-resolver-typescript": "^3.6.1",
     "eslint-plugin-import": "2.29.1",
     "eslint-plugin-mocha": "^10.3.0",
-    "eslint-plugin-no-floating-promise": "^1.0.2",
+    "eslint-plugin-no-floating-promise": "^2.0.0",
     "eslint-plugin-no-only-tests": "^3.1.0",
     "globby": "^11.1.0",
     "htmlhint": "^1.1.4",
