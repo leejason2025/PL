@@ -1911,13 +1911,37 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@grpc/grpc-js@npm:^1.10.1, @grpc/grpc-js@npm:^1.7.1":
+"@grpc/grpc-js@npm:^1.10.6":
+  version: 1.10.6
+  resolution: "@grpc/grpc-js@npm:1.10.6"
+  dependencies:
+    "@grpc/proto-loader": ^0.7.10
+    "@js-sdsl/ordered-map": ^4.4.2
+  checksum: 343d70ee435d6b4b82c72160d31a4749ac2621938f58328dd71df3013377665128c890df60e057fde381b12b83d34f802d586f7feb61d079793d89adfc0f40e8
+  languageName: node
+  linkType: hard
+
+"@grpc/grpc-js@npm:^1.7.1":
   version: 1.10.1
   resolution: "@grpc/grpc-js@npm:1.10.1"
   dependencies:
     "@grpc/proto-loader": ^0.7.8
     "@types/node": ">=12.12.47"
   checksum: 5842c1c3ffcb630a1ee45998733861a16f8f6db4fe78f317f6be25ddf581040dc38e8c09aed7073dfae1a7099a3c83658ca8f3db77c0bc3b0e40625618245bd0
+  languageName: node
+  linkType: hard
+
+"@grpc/proto-loader@npm:^0.7.10":
+  version: 0.7.12
+  resolution: "@grpc/proto-loader@npm:0.7.12"
+  dependencies:
+    lodash.camelcase: ^4.3.0
+    long: ^5.0.0
+    protobufjs: ^7.2.4
+    yargs: ^17.7.2
+  bin:
+    proto-loader-gen-types: build/bin/proto-loader-gen-types.js
+  checksum: 5132b683b3f809417f46b421231ffa083d6300406d1276a12fc619d771b4f8e0e8ad5a935e0b381caaa9a57ef47630191dd2310b739d1be5aa90cc87b97fce0f
   languageName: node
   linkType: hard
 
@@ -2047,6 +2071,13 @@ __metadata:
     "@jridgewell/resolve-uri": ^3.1.0
     "@jridgewell/sourcemap-codec": ^1.4.14
   checksum: 956a6f0f6fec060fb48c6bf1f5ec2064e13cd38c8be3873877d4b92b4a27ba58289a34071752671262a3e3c202abcc3fa2aac64d8447b4b0fa1ba3c9047f1c20
+  languageName: node
+  linkType: hard
+
+"@js-sdsl/ordered-map@npm:^4.4.2":
+  version: 4.4.2
+  resolution: "@js-sdsl/ordered-map@npm:4.4.2"
+  checksum: a927ae4ff8565ecb75355cc6886a4f8fadbf2af1268143c96c0cce3ba01261d241c3f4ba77f21f3f017a00f91dfe9e0673e95f830255945c80a0e96c6d30508a
   languageName: node
   linkType: hard
 
@@ -3231,7 +3262,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@prairielearn/opentelemetry@workspace:packages/opentelemetry"
   dependencies:
-    "@grpc/grpc-js": ^1.10.1
+    "@grpc/grpc-js": ^1.10.6
     "@opentelemetry/api": ^1.8.0
     "@opentelemetry/context-async-hooks": ^1.22.0
     "@opentelemetry/core": ^1.22.0
