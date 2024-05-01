@@ -16,7 +16,7 @@
     "@types/debug": "^4.1.12",
     "@types/node": "^20.11.24",
     "mocha": "^10.3.0",
-    "typescript": "^5.3.3"
+    "typescript": "^5.4.5"
   },
   "dependencies": {
     "base64url": "^3.0.1",
