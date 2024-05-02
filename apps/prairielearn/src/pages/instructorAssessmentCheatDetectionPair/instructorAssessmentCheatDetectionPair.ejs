@@ -99,6 +99,7 @@
                         <th class="text-center"></th>
                         <th class="text-center">student1</th>
                         <th class="text-center">student2</th>
+                        <th class="text-center">time difference</th>
                       </tr>
                     </thead>
                     <tbody id="table1">
@@ -369,8 +370,15 @@
           let rule5_dict = JSON.parse(localStorage.getItem('rule5_dict'));
           let submissionTimes = JSON.parse(rule5_dict[queryParams.data1]["submission_times"].replace(/\'/g, '"'));
           let submissionTimes2 = JSON.parse(rule5_dict[queryParams.data2]["submission_times"].replace(/\'/g, '"'));
-          console.log(submissionTimes);
-          console.log(typeof submissionTimes);
+          let submissionDiff = {};
+          for (let key in submissionTimes) {
+              if (submissionTimes2.hasOwnProperty(key)) {
+                  let diff = Math.abs(new Date(submissionTimes[key]) - new Date(submissionTimes2[key]));
+                  submissionDiff[key] = diff/1000;
+              }
+          }
+          console.log(submissionDiff);
+          console.log(typeof submissionDiff);
 
           const p = document.getElementById('cardContent');
           confidence = pair_dict[queryParams.data1+queryParams.data2]["confidence"]
@@ -388,6 +396,7 @@
                 <td>${key} Submission Time</td>
                 <td class="text-center">${value}</td>
                 <td class="text-center">${submissionTimes2[key]}</td>
+                <td class="text-center">${submissionDiff[key]} seconds</td>
             </tr>`;
             tableBody.innerHTML += row;
           });
