@@ -6,7 +6,7 @@ Faker==23.3.0
 folium==0.16.0
 ipython==8.22.1
 jupyter-collaboration==2.0.2
-matplotlib==3.8.3
+matplotlib==3.9.0
 nbconvert==7.16.1
 nbformat==5.9.2
 networkx==3.2.1
