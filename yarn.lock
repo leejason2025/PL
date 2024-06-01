@@ -3436,7 +3436,7 @@ __metadata:
     bootstrap: ^4.6.2
     bootstrap-icons: ^1.11.3
     bootstrap-select: ^1.13.18
-    bootstrap-table: 1.21.2
+    bootstrap-table: 1.22.6
     bowser: ^2.11.0
     byline: ^5.0.0
     chai: ^4.4.1
@@ -6288,12 +6288,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"bootstrap-table@npm:1.21.2":
-  version: 1.21.2
-  resolution: "bootstrap-table@npm:1.21.2"
+"bootstrap-table@npm:1.22.6":
+  version: 1.22.6
+  resolution: "bootstrap-table@npm:1.22.6"
   peerDependencies:
-    jquery: 1.9.1 - 3
-  checksum: 4ccda8458a5e7e645fdb72cd5dfa381ae293a86e83b73d0a97e6d588ff717d8dc13a6b9b937dc2241dc09a7248183eb63faec8c9c8aec58fcd0b1ab83b8a6f8c
+    jquery: 3
+  checksum: 8d012688ae4beab627874e343e8f90c55ecb827439b13b26696ec5692f1efc5d1b1c86c2c1b42787aa8661f4eab2473da3e04f0c2842dad7841beb5e89f21ad1
   languageName: node
   linkType: hard
 
