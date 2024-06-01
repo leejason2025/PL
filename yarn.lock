@@ -3466,7 +3466,7 @@ __metadata:
     fast-glob: ^3.3.2
     fetch-cookie: ^3.0.1
     file-type: ^16.5.4
-    filesize: ^10.1.0
+    filesize: ^10.1.2
     folder-hash: ^4.0.4
     form-data: ^4.0.0
     fs-extra: ^11.2.0
@@ -3707,7 +3707,7 @@ __metadata:
     "@socket.io/redis-emitter": ^5.1.0
     "@types/node": ^20.11.24
     fast-glob: ^3.3.2
-    filesize: ^10.1.0
+    filesize: ^10.1.2
     socket.io: ^4.7.4
     typescript: ^5.3.3
     typescript-cp: ^0.1.9
@@ -9230,10 +9230,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"filesize@npm:^10.1.0":
-  version: 10.1.0
-  resolution: "filesize@npm:10.1.0"
-  checksum: 8dd35fe85ebc56e9ee99b6814a854f5d5ee12d09a05cf38ebc1865b5efca128a2bb7480d3c2e841a3d20d45c756fc669efecbf65b6842afd75b7f20648306654
+"filesize@npm:^10.1.2":
+  version: 10.1.2
+  resolution: "filesize@npm:10.1.2"
+  checksum: 584cd30415e27e19effd27da7178b7b95dbab065d7b954a5cd763318db55afc12f36077aeea3c22c94849d66d0c82ea48e644c66d339f224e8e928e666aa3e4a
   languageName: node
   linkType: hard
 
