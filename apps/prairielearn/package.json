@@ -227,7 +227,7 @@
     "@types/tmp": "^0.2.6",
     "@types/unzipper": "^0.10.9",
     "@types/uuid": "^9.0.8",
-    "axe-core": "^4.7.0",
+    "axe-core": "^4.9.1",
     "chai": "^4.4.1",
     "chai-as-promised": "^7.1.1",
     "express-list-endpoints": "^6.0.0",
